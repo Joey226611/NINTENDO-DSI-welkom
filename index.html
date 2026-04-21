@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Welkom!</title>
+
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    background: #000000; /* echt donker zwart */
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    text-align: center;
+}
+
+/* Neon welcome text */
+h1 {
+    margin-top: 25%;
+    font-size: 60px;
+    color: #ffffff;
+    text-shadow:
+        0 0 5px #00ffff,
+        0 0 10px #ff00ff,
+        0 0 20px #00ffff,
+        0 0 40px #ff00ff;
+    animation: glow 2.5s infinite alternate;
+}
+
+/* glow pulse */
+@keyframes glow {
+    0% {
+        text-shadow:
+        0 0 5px #00ffff,
+        0 0 10px #ff00ff,
+        0 0 15px #00ffff;
+    }
+    100% {
+        text-shadow:
+        0 0 10px #ff00ff,
+        0 0 20px #00ffff,
+        0 0 40px #ff00ff;
+    }
+}
+
+/* subtle neon scan lines */
+.line {
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background: rgba(0,255,255,0.2);
+    animation: move 4s linear infinite;
+}
+
+.line2 {
+    top: 35%;
+    background: rgba(255,0,255,0.15);
+    animation-delay: 1.5s;
+}
+
+.line3 {
+    top: 65%;
+    background: rgba(0,255,255,0.15);
+    animation-delay: 3s;
+}
+
+@keyframes move {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+/* extra dark vignette effect */
+body:after {
+    content: "";
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background: radial-gradient(circle, transparent 40%, #000 100%);
+    pointer-events: none;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="line"></div>
+<div class="line line2"></div>
+<div class="line line3"></div>
+
+<h1>Welkom!</h1>
+
+</body>
+</html>
